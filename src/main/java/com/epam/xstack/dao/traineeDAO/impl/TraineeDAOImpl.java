@@ -21,15 +21,17 @@ import java.util.Random;
 public class TraineeDAOImpl implements TraineeDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(TraineeDAO.class);
     private final SessionFactory sessionFactory;
-    private final TraineeRegistrationRequestMapper requestMapper;
-    private final TraineeRegistrationResponseMapper responseMapper;
+    private final TraineeRegistrationRequestMapper registrationRequestMapper;
+    private final TraineeRegistrationResponseMapper registrationResponseMapper;
+
+
     @Override
     @Transactional
     public TraineeRegistrationResponseDTO saveTrainee(TraineeRegistrationRequestDTO requestDTO) {
         Session session = sessionFactory.getCurrentSession();
-        Trainee trainee = requestMapper.toEntity(requestDTO);
+        Trainee trainee = registrationRequestMapper.toEntity(requestDTO);
         session.save(trainee);
-        TraineeRegistrationRequestDTO newTrainee = requestMapper.toDto(trainee);
+        TraineeRegistrationRequestDTO newTrainee = registrationRequestMapper.toDto(trainee);
         String password = generateRandomPassword(10);
         trainee.setUserName(newTrainee.getFirstName() + "." + newTrainee.getLastName());
         trainee.setPassword(password);

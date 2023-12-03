@@ -1,6 +1,5 @@
 package com.epam.xstack.model.entity;
 
-import com.epam.xstack.model.enums.TrainingType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -29,9 +27,9 @@ public class Training {
     private Trainer trainerId;
     @Column(name = "training_name")
     private String trainingName;
-    @Enumerated(EnumType.STRING)
-    @Column(name = "training_type")
-    private Set<TrainingType> trainingType;
+    @OneToOne
+    @JoinColumn(name = "training_type_id")
+    private TrainingType trainingType;
     @Column(name = "training_date")
     private Date trainingDate;
     @Column(name = "training_duration")

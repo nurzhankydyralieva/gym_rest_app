@@ -23,6 +23,8 @@ public class TrainerDAOImpl implements TrainerDAO {
     private final SessionFactory sessionFactory;
     private final TrainerRegistrationRequestMapper requestMapper;
 
+
+
     @Override
     @Transactional
     public TrainerRegistrationResponseDTO saveTrainer(TrainerRegistrationRequestDTO requestDTO) {

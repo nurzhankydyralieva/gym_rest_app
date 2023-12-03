@@ -1,4 +1,4 @@
-package com.epam.xstack.model.dto.trainer.reuest;
+package com.epam.xstack.model.dto.authentication;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthorizationTrainerRequestDTO {
+public class AuthenticationChangeLoginRequestDTO {
     private String userName;
-    private String password;
+    private String oldPassword;
+    private String newPassword;
 }

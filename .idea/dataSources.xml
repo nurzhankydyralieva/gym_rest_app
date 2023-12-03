@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="gym_rest_db@localhost" uuid="b5e74d49-e974-41db-8463-7ee9c819475d">
+    <data-source source="LOCAL" name="gym_rest_db@localhost" uuid="d7c52061-9fb0-4ab8-9ba4-fb6fece0287c">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/gym_rest_db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="gym_xstack_app/Hibernate" uuid="53702e3d-9d16-418b-9732-b92d11c4d454">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/gym_rest_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>

@@ -10,7 +10,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 @Entity
 @Table(name = "trainer")
 public class Trainer extends User {
@@ -18,9 +17,6 @@ public class Trainer extends User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "trainer_id")
     private Long id;
-    @OneToOne
-    @JoinColumn(name = "specialization_id")
-    private Specialization specialization;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "trainer_trainee",
@@ -35,4 +31,7 @@ public class Trainer extends User {
             inverseJoinColumns = @JoinColumn(name = "training_id")
     )
     private List<Training> trainings;
+    @OneToOne
+    @JoinColumn(name = "specialization_id")
+    private TrainingType specialization;
 }

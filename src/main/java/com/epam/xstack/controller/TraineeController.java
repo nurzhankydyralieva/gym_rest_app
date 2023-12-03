@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/trainee")
+@RequestMapping("/trainees")
 @RequiredArgsConstructor
 public class TraineeController {
     private final TraineeService traineeService;
+
+
     @PostMapping("/save")
     public ResponseEntity<TraineeRegistrationResponseDTO> saveTrainee(@RequestBody TraineeRegistrationRequestDTO requestDTO) {
         return new ResponseEntity<>(traineeService.saveTrainee(requestDTO), HttpStatus.CREATED);

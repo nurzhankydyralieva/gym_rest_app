@@ -1,4 +1,4 @@
-package com.epam.xstack.model.dto.trainer.response;
+package com.epam.xstack.model.dto.trainee.reuest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,5 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthorizationTrainerResponseDTO {
+public class GetTraineeProfileRequestDTO {
+    private Long id;
+    private String userName;
 }

@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "specialization")
-public class Specialization {
+@Table(name = "training_type")
+public class TrainingType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "specialization_id")
+    @Column(name = "training_type_id")
     private Long id;
-    @Column(name = "speciality")
-    private String speciality;
+    @Column(name = "training_type_name")
+    private String trainingTypName;
 }
