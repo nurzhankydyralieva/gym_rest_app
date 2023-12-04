@@ -6,8 +6,10 @@ import com.epam.xstack.mapper.trainer_mapper.GetTrainerProfileRequestMapper;
 import com.epam.xstack.mapper.trainer_mapper.TrainerRegistrationRequestMapper;
 import com.epam.xstack.model.dto.trainer.response.GetTrainerProfileResponseDTO;
 import com.epam.xstack.model.dto.trainer.response.TrainerRegistrationResponseDTO;
+import com.epam.xstack.model.dto.trainer.response.UpdateTrainerProfileResponseDTO;
 import com.epam.xstack.model.dto.trainer.reuest.GetTrainerProfileRequestDTO;
 import com.epam.xstack.model.dto.trainer.reuest.TrainerRegistrationRequestDTO;
+import com.epam.xstack.model.dto.trainer.reuest.UpdateTrainerProfileRequestDTO;
 import com.epam.xstack.model.entity.Trainer;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
@@ -26,6 +28,29 @@ public class TrainerDAOImpl implements TrainerDAO {
     private final SessionFactory sessionFactory;
     private final TrainerRegistrationRequestMapper requestMapper;
     private final GetTrainerProfileRequestMapper getTrainerProfileRequestMapper;
+
+
+    @Override
+    @Transactional
+    public UpdateTrainerProfileResponseDTO updateTrainerProfile(Long id, UpdateTrainerProfileRequestDTO requestDTO) {
+        Session session = sessionFactory.getCurrentSession();
+        Trainer trainerToBeUpdated = session.get(Trainer.class, id);
+
+        trainerToBeUpdated.setUserName(requestDTO.getUserName());
+        trainerToBeUpdated.setFirstName(requestDTO.getFirstName());
+        trainerToBeUpdated.setLastName(requestDTO.getLastName());
+        trainerToBeUpdated.setIsActive(requestDTO.getIsActive());
+
+        return UpdateTrainerProfileResponseDTO
+                .builder()
+                .userName(trainerToBeUpdated.getUserName())
+                .firstName(trainerToBeUpdated.getFirstName())
+                .lastName(trainerToBeUpdated.getLastName())
+                .specialization(trainerToBeUpdated.getSpecialization())
+                .isActive(trainerToBeUpdated.getIsActive())
+                .trainees(trainerToBeUpdated.getTrainees())
+                .build();
+    }
 
     @Override
     @Transactional

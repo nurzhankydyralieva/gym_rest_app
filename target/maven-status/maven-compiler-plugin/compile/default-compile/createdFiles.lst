@@ -3,6 +3,7 @@ com\epam\xstack\controller\TraineeController.class
 com\epam\xstack\mapper\trainee_mapper\GetTraineeProfileResponseMapper.class
 com\epam\xstack\model\dto\trainee\reuest\UpdateTraineeProfileRequestDTO$UpdateTraineeProfileRequestDTOBuilder.class
 com\epam\xstack\mapper\trainee_mapper\TraineeRegistrationRequestMapperImpl.class
+com\epam\xstack\model\dto\trainer\response\UpdateTrainerProfileResponseDTO$UpdateTrainerProfileResponseDTOBuilder.class
 com\epam\xstack\model\dto\authentication\AuthenticationChangeLoginRequestDTO$AuthenticationChangeLoginRequestDTOBuilder.class
 com\epam\xstack\mapper\trainee_mapper\TraineeRegistrationResponseMapper.class
 com\epam\xstack\mapper\trainee_mapper\TraineeRegistrationResponseMapperImpl.class
@@ -14,6 +15,7 @@ com\epam\xstack\controller\AuthenticationController.class
 com\epam\xstack\service\authentication_service\impl\AuthenticationServiceImpl.class
 com\epam\xstack\configuration\SpringMVCDispatcherServletInitializer.class
 com\epam\xstack\dao\trainerDAO\impl\TrainerDAOImpl.class
+com\epam\xstack\model\dto\trainer\reuest\UpdateTrainerProfileRequestDTO$UpdateTrainerProfileRequestDTOBuilder.class
 com\epam\xstack\mapper\trainee_mapper\UpdateTraineeProfileRequestMapperImpl.class
 com\epam\xstack\model\dto\trainee\reuest\UpdateTraineeProfileRequestDTO.class
 com\epam\xstack\dao\trainerDAO\TrainerDAO.class
@@ -27,11 +29,14 @@ com\epam\xstack\model\dto\trainee\reuest\GetTraineeProfileRequestDTO.class
 com\epam\xstack\configuration\SpringConfig.class
 com\epam\xstack\model\enums\Code.class
 com\epam\xstack\mapper\trainer_mapper\TrainerRegistrationResponseMapper.class
+com\epam\xstack\mapper\trainer_mapper\UpdateTrainerProfileResponseMapper.class
 com\epam\xstack\model\dto\trainee\reuest\TraineeRegistrationRequestDTO.class
 com\epam\xstack\service\trainee_service\impl\TraineeServiceImpl.class
 com\epam\xstack\controller\TrainerController.class
 com\epam\xstack\mapper\trainer_mapper\TrainerRegistrationRequestMapperImpl.class
+com\epam\xstack\mapper\trainer_mapper\UpdateTrainerProfileResponseMapperImpl.class
 com\epam\xstack\mapper\trainee_mapper\UpdateTraineeProfileResponseMapper.class
+com\epam\xstack\model\dto\trainer\response\UpdateTrainerProfileResponseDTO.class
 com\epam\xstack\model\dto\authentication\AuthenticationResponseDTO$AuthenticationResponseDTOBuilder.class
 com\epam\xstack\model\dto\trainer\response\GetTrainerProfileResponseDTO.class
 com\epam\xstack\mapper\trainer_mapper\GetTrainerProfileResponseMapper.class
@@ -50,6 +55,7 @@ com\epam\xstack\mapper\trainer_mapper\GetTrainerProfileRequestMapperImpl.class
 com\epam\xstack\model\dto\trainer\response\GetTrainerProfileResponseDTO$GetTrainerProfileResponseDTOBuilder.class
 com\epam\xstack\mapper\authentication_mapper\AuthenticationRequestMapperImpl.class
 com\epam\xstack\model\entity\Training$TrainingBuilder.class
+com\epam\xstack\mapper\trainer_mapper\UpdateTrainerProfileRequestMapperImpl.class
 com\epam\xstack\mapper\trainee_mapper\GetTraineeProfileRequestMapperImpl.class
 com\epam\xstack\model\dto\trainer\reuest\TrainerRegistrationRequestDTO.class
 com\epam\xstack\model\entity\Trainer.class
@@ -59,6 +65,7 @@ com\epam\xstack\mapper\trainee_mapper\UpdateTraineeProfileResponseMapperImpl.cla
 com\epam\xstack\model\dto\trainee\response\DeleteResponseDTO$DeleteResponseDTOBuilder.class
 com\epam\xstack\model\entity\Trainee.class
 com\epam\xstack\model\dto\authentication\AuthenticationRequestDTO.class
+com\epam\xstack\mapper\trainer_mapper\UpdateTrainerProfileRequestMapper.class
 com\epam\xstack\mapper\authentication_mapper\AuthenticationChangeLoginRequestMapperImpl.class
 com\epam\xstack\dao\traineeDAO\impl\TraineeDAOImpl.class
 com\epam\xstack\model\entity\Training.class
@@ -77,3 +84,4 @@ com\epam\xstack\mapper\trainer_mapper\GetTrainerProfileRequestMapper.class
 com\epam\xstack\model\dto\authentication\AuthenticationRequestDTO$AuthenticationRequestDTOBuilder.class
 com\epam\xstack\model\dto\authentication\AuthenticationResponseDTO.class
 com\epam\xstack\dao\traineeDAO\TraineeDAO.class
+com\epam\xstack\model\dto\trainer\reuest\UpdateTrainerProfileRequestDTO.class

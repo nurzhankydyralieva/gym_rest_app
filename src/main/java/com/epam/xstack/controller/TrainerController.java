@@ -2,8 +2,10 @@ package com.epam.xstack.controller;
 
 import com.epam.xstack.model.dto.trainer.response.GetTrainerProfileResponseDTO;
 import com.epam.xstack.model.dto.trainer.response.TrainerRegistrationResponseDTO;
+import com.epam.xstack.model.dto.trainer.response.UpdateTrainerProfileResponseDTO;
 import com.epam.xstack.model.dto.trainer.reuest.GetTrainerProfileRequestDTO;
 import com.epam.xstack.model.dto.trainer.reuest.TrainerRegistrationRequestDTO;
+import com.epam.xstack.model.dto.trainer.reuest.UpdateTrainerProfileRequestDTO;
 import com.epam.xstack.service.trainer_service.TrainerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,6 +27,11 @@ public class TrainerController {
     @PostMapping("/save")
     public ResponseEntity<TrainerRegistrationResponseDTO> saveTrainee(@RequestBody TrainerRegistrationRequestDTO requestDTO) {
         return new ResponseEntity<>(trainerService.saveTrainer(requestDTO), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<UpdateTrainerProfileResponseDTO> updateUser(@PathVariable("id") Long id, @RequestBody UpdateTrainerProfileRequestDTO requestDTO) {
+        return new ResponseEntity<>(trainerService.updateTrainerProfile(id, requestDTO), HttpStatus.OK);
     }
 
 }
