@@ -1,6 +1,5 @@
 package com.epam.xstack.controller;
 
-import com.epam.xstack.dao.traineeDAO.TraineeDAO;
 import com.epam.xstack.model.dto.trainee.response.DeleteResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.GetTraineeProfileResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.TraineeRegistrationResponseDTO;
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class TraineeController {
     private final TraineeService traineeService;
-    private final TraineeDAO traineeDAO;
+
 
     @GetMapping("/{id}")
     public ResponseEntity<GetTraineeProfileResponseDTO> selectTraineeProfile(@PathVariable("id") Long id, @RequestBody GetTraineeProfileRequestDTO requestDTO) {
@@ -38,7 +37,7 @@ public class TraineeController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<DeleteResponseDTO> deleteTraineeByUserName(@PathVariable("id") Long id, @RequestBody GetTraineeProfileRequestDTO requestDTO) {
-        return new ResponseEntity<>(traineeDAO.deleteTraineeByUserName(id, requestDTO), HttpStatus.OK);
+        return new ResponseEntity<>(traineeService.deleteTraineeByUserName(id, requestDTO), HttpStatus.OK);
     }
 
 }

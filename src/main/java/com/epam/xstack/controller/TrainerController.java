@@ -1,6 +1,8 @@
 package com.epam.xstack.controller;
 
+import com.epam.xstack.model.dto.trainer.response.GetTrainerProfileResponseDTO;
 import com.epam.xstack.model.dto.trainer.response.TrainerRegistrationResponseDTO;
+import com.epam.xstack.model.dto.trainer.reuest.GetTrainerProfileRequestDTO;
 import com.epam.xstack.model.dto.trainer.reuest.TrainerRegistrationRequestDTO;
 import com.epam.xstack.service.trainer_service.TrainerService;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +15,12 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class TrainerController {
     private final TrainerService trainerService;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<GetTrainerProfileResponseDTO> selectTrainerProfile(@PathVariable("id") Long id, @RequestBody GetTrainerProfileRequestDTO requestDTO) {
+        return new ResponseEntity<>(trainerService.selectTrainerProfileByUserName(id, requestDTO), HttpStatus.OK);
+    }
+
 
     @PostMapping("/save")
     public ResponseEntity<TrainerRegistrationResponseDTO> saveTrainee(@RequestBody TrainerRegistrationRequestDTO requestDTO) {

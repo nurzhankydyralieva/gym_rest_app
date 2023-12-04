@@ -2,8 +2,11 @@ package com.epam.xstack.dao.trainerDAO.impl;
 
 import com.epam.xstack.dao.traineeDAO.TraineeDAO;
 import com.epam.xstack.dao.trainerDAO.TrainerDAO;
+import com.epam.xstack.mapper.trainer_mapper.GetTrainerProfileRequestMapper;
 import com.epam.xstack.mapper.trainer_mapper.TrainerRegistrationRequestMapper;
+import com.epam.xstack.model.dto.trainer.response.GetTrainerProfileResponseDTO;
 import com.epam.xstack.model.dto.trainer.response.TrainerRegistrationResponseDTO;
+import com.epam.xstack.model.dto.trainer.reuest.GetTrainerProfileRequestDTO;
 import com.epam.xstack.model.dto.trainer.reuest.TrainerRegistrationRequestDTO;
 import com.epam.xstack.model.entity.Trainer;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +25,31 @@ public class TrainerDAOImpl implements TrainerDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(TraineeDAO.class);
     private final SessionFactory sessionFactory;
     private final TrainerRegistrationRequestMapper requestMapper;
+    private final GetTrainerProfileRequestMapper getTrainerProfileRequestMapper;
 
+    @Override
+    @Transactional
+    public GetTrainerProfileResponseDTO selectTrainerProfileByUserName(Long id, GetTrainerProfileRequestDTO requestDTO) {
+        Session session = sessionFactory.getCurrentSession();
+        Trainer trainer = getTrainerProfileRequestMapper.toEntity(requestDTO);
+        Trainer trainerId = session.get(Trainer.class, id);
+
+        if (trainerId.getUserName().equals(trainer.getUserName())) {
+            getTrainerProfileRequestMapper.toDto(trainer);
+
+            return GetTrainerProfileResponseDTO
+                    .builder()
+                    .firstName(trainerId.getFirstName())
+                    .lastName(trainerId.getLastName())
+                    .specialization(trainerId.getSpecialization())
+                    .isActive(trainerId.getIsActive())
+                    .trainees(trainerId.getTrainees())
+                    .build();
+        } else {
+            throw new RuntimeException("Not available");
+        }
+
+    }
 
 
     @Override
