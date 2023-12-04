@@ -1,10 +1,14 @@
 package com.epam.xstack.dao.traineeDAO.impl;
 
 import com.epam.xstack.dao.traineeDAO.TraineeDAO;
+import com.epam.xstack.mapper.trainee_mapper.GetTraineeProfileRequestMapper;
 import com.epam.xstack.mapper.trainee_mapper.TraineeRegistrationRequestMapper;
-import com.epam.xstack.mapper.trainee_mapper.TraineeRegistrationResponseMapper;
+import com.epam.xstack.model.dto.trainee.response.GetTraineeProfileResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.TraineeRegistrationResponseDTO;
+import com.epam.xstack.model.dto.trainee.response.UpdateTraineeProfileResponseDTO;
+import com.epam.xstack.model.dto.trainee.reuest.GetTraineeProfileRequestDTO;
 import com.epam.xstack.model.dto.trainee.reuest.TraineeRegistrationRequestDTO;
+import com.epam.xstack.model.dto.trainee.reuest.UpdateTraineeProfileRequestDTO;
 import com.epam.xstack.model.entity.Trainee;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
@@ -22,7 +26,57 @@ public class TraineeDAOImpl implements TraineeDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(TraineeDAO.class);
     private final SessionFactory sessionFactory;
     private final TraineeRegistrationRequestMapper registrationRequestMapper;
-    private final TraineeRegistrationResponseMapper registrationResponseMapper;
+    private final GetTraineeProfileRequestMapper getTraineeProfileRequestMapper;
+
+    @Override
+    @Transactional
+    public GetTraineeProfileResponseDTO selectTraineeProfileByUserName(Long id, GetTraineeProfileRequestDTO requestDTO) {
+        Session session = sessionFactory.getCurrentSession();
+        Trainee trainee = getTraineeProfileRequestMapper.toEntity(requestDTO);
+        Trainee traineeId = session.get(Trainee.class, id);
+
+        if (traineeId.getUserName().equals(trainee.getUserName())) {
+            getTraineeProfileRequestMapper.toDto(trainee);
+            return GetTraineeProfileResponseDTO
+                    .builder()
+                    .firstName(traineeId.getFirstName())
+                    .lastName(traineeId.getLastName())
+                    .address(traineeId.getAddress())
+                    .isActive(traineeId.getIsActive())
+                    .dateOfBirth(traineeId.getDateOfBirth())
+                    .trainers(traineeId.getTrainers())
+                    .build();
+        } else {
+            throw new RuntimeException("Not available");
+        }
+
+    }
+
+
+    @Override
+    @Transactional
+    public UpdateTraineeProfileResponseDTO updateTraineeProfile(Long id, UpdateTraineeProfileRequestDTO requestDTO) {
+        Session session = sessionFactory.getCurrentSession();
+        Trainee traineeToBeUpdated = session.get(Trainee.class, id);
+
+        traineeToBeUpdated.setUserName(requestDTO.getUserName());
+        traineeToBeUpdated.setFirstName(requestDTO.getFirstName());
+        traineeToBeUpdated.setLastName(requestDTO.getLastName());
+        traineeToBeUpdated.setDateOfBirth(requestDTO.getDateOfBirth());
+        traineeToBeUpdated.setAddress(requestDTO.getAddress());
+        traineeToBeUpdated.setIsActive(requestDTO.getIsActive());
+
+        return UpdateTraineeProfileResponseDTO
+                .builder()
+                .userName(traineeToBeUpdated.getUserName())
+                .firstName(traineeToBeUpdated.getFirstName())
+                .lastName(traineeToBeUpdated.getLastName())
+                .dateOfBirth(traineeToBeUpdated.getDateOfBirth())
+                .address(traineeToBeUpdated.getAddress())
+                .isActive(traineeToBeUpdated.getIsActive())
+                .trainers(traineeToBeUpdated.getTrainers())
+                .build();
+    }
 
 
     @Override
@@ -43,6 +97,7 @@ public class TraineeDAOImpl implements TraineeDAO {
                 .password(password)
                 .build();
     }
+
 
     private static String generateRandomPassword(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=<>?";

@@ -2,6 +2,7 @@ package com.epam.xstack.mapper.trainee_mapper;
 
 import com.epam.xstack.model.dto.trainee.reuest.TraineeRegistrationRequestDTO;
 import com.epam.xstack.model.entity.Trainee;
+import com.epam.xstack.model.entity.User;
 import org.mapstruct.Mapper;
 
 import java.util.List;

@@ -51,6 +51,7 @@ public class AuthenticationDAOImpl implements AuthenticationDAO {
     public AuthenticationResponseDTO authenticationChangeLogin(Long id, AuthenticationChangeLoginRequestDTO requestDTO) {
         Session session = sessionFactory.getCurrentSession();
         Trainer trainerToBeUpdated = session.get(Trainer.class, id);
+
         trainerToBeUpdated.setUserName(requestDTO.getUserName());
         trainerToBeUpdated.setPassword(requestDTO.getNewPassword());
         return AuthenticationResponseDTO
