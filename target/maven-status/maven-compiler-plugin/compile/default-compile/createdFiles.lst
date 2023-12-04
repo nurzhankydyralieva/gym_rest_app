@@ -8,6 +8,7 @@ com\epam\xstack\mapper\trainee_mapper\TraineeRegistrationResponseMapper.class
 com\epam\xstack\mapper\trainee_mapper\TraineeRegistrationResponseMapperImpl.class
 com\epam\xstack\model\dto\trainer\reuest\TrainerRegistrationRequestDTO$TrainerRegistrationRequestDTOBuilder.class
 com\epam\xstack\service\trainee_service\TraineeService.class
+com\epam\xstack\model\dto\trainee\response\DeleteResponseDTO.class
 com\epam\xstack\model\dto\trainee\response\TraineeRegistrationResponseDTO.class
 com\epam\xstack\controller\AuthenticationController.class
 com\epam\xstack\service\authentication_service\impl\AuthenticationServiceImpl.class
@@ -49,6 +50,7 @@ com\epam\xstack\model\entity\Trainer.class
 com\epam\xstack\service\trainer_service\TrainerService.class
 com\epam\xstack\mapper\trainee_mapper\UpdateTraineeProfileRequestMapper.class
 com\epam\xstack\mapper\trainee_mapper\UpdateTraineeProfileResponseMapperImpl.class
+com\epam\xstack\model\dto\trainee\response\DeleteResponseDTO$DeleteResponseDTOBuilder.class
 com\epam\xstack\model\entity\Trainee.class
 com\epam\xstack\model\dto\authentication\AuthenticationRequestDTO.class
 com\epam\xstack\mapper\authentication_mapper\AuthenticationChangeLoginRequestMapperImpl.class

@@ -1,5 +1,6 @@
 package com.epam.xstack.dao.traineeDAO;
 
+import com.epam.xstack.model.dto.trainee.response.DeleteResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.GetTraineeProfileResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.TraineeRegistrationResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.UpdateTraineeProfileResponseDTO;
@@ -13,4 +14,6 @@ public interface TraineeDAO {
     GetTraineeProfileResponseDTO selectTraineeProfileByUserName(Long id, GetTraineeProfileRequestDTO requestDTO);
 
     UpdateTraineeProfileResponseDTO updateTraineeProfile(Long id, UpdateTraineeProfileRequestDTO requestDTO);
+
+    DeleteResponseDTO deleteTraineeByUserName(Long id, GetTraineeProfileRequestDTO requestDTO);
 }

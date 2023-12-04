@@ -10,6 +10,7 @@ D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\ep
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\entity\Trainer.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\authentication\AuthenticationChangeLoginRequestDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\mapper\trainee_mapper\TraineeRegistrationResponseMapper.java
+D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainee\response\DeleteResponseDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\dao\traineeDAO\TraineeDAO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\mapper\trainer_mapper\TrainerRegistrationRequestMapper.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainee\response\UpdateTraineeProfileResponseDTO.java

@@ -3,6 +3,7 @@ package com.epam.xstack.dao.traineeDAO.impl;
 import com.epam.xstack.dao.traineeDAO.TraineeDAO;
 import com.epam.xstack.mapper.trainee_mapper.GetTraineeProfileRequestMapper;
 import com.epam.xstack.mapper.trainee_mapper.TraineeRegistrationRequestMapper;
+import com.epam.xstack.model.dto.trainee.response.DeleteResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.GetTraineeProfileResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.TraineeRegistrationResponseDTO;
 import com.epam.xstack.model.dto.trainee.response.UpdateTraineeProfileResponseDTO;
@@ -10,6 +11,7 @@ import com.epam.xstack.model.dto.trainee.reuest.GetTraineeProfileRequestDTO;
 import com.epam.xstack.model.dto.trainee.reuest.TraineeRegistrationRequestDTO;
 import com.epam.xstack.model.dto.trainee.reuest.UpdateTraineeProfileRequestDTO;
 import com.epam.xstack.model.entity.Trainee;
+import com.epam.xstack.model.enums.Code;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -27,6 +29,7 @@ public class TraineeDAOImpl implements TraineeDAO {
     private final SessionFactory sessionFactory;
     private final TraineeRegistrationRequestMapper registrationRequestMapper;
     private final GetTraineeProfileRequestMapper getTraineeProfileRequestMapper;
+
 
     @Override
     @Transactional
@@ -78,6 +81,25 @@ public class TraineeDAOImpl implements TraineeDAO {
                 .build();
     }
 
+    @Override
+    @Transactional
+    public DeleteResponseDTO deleteTraineeByUserName(Long id, GetTraineeProfileRequestDTO requestDTO) {
+        Session session = sessionFactory.getCurrentSession();
+        Trainee trainee = getTraineeProfileRequestMapper.toEntity(requestDTO);
+        Trainee traineeId = session.get(Trainee.class, id);
+
+        if (traineeId.getUserName().equals(trainee.getUserName())) {
+            session.remove(traineeId);
+            return DeleteResponseDTO
+                    .builder()
+                    .response("Trainee is deleted from database")
+                    .code(Code.STATUS_200_OK)
+                    .build();
+        } else {
+            throw new RuntimeException("Trainee is not available in database");
+        }
+
+    }
 
     @Override
     @Transactional
