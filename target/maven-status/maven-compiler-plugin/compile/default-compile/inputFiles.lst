@@ -7,6 +7,7 @@ D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\ep
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainer\reuest\UpdateTrainerProfileRequestDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\authentication\AuthenticationResponseDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\entity\Trainer.java
+D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainee\response\UpdateTrainee_sTrainerListResponseDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainer\reuest\GetTrainerProfileRequestDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\authentication\AuthenticationChangeLoginRequestDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainer\response\GetTrainerProfileResponseDTO.java
@@ -44,12 +45,14 @@ D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\ep
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\dao\traineeDAO\impl\TraineeDAOImpl.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\enums\Code.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainer\response\UpdateTrainerProfileResponseDTO.java
+D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\mapper\trainee_mapper\UpdateTrainee_sTrainerListRequestMapper.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainee\response\TraineeRegistrationResponseDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\entity\Trainee.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\service\authentication_service\AuthenticationService.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\entity\Training.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\service\trainer_service\TrainerService.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\dao\trainerDAO\impl\TrainerDAOImpl.java
+D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\trainee\reuest\UpdateTrainee_sTrainerListRequestDTO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\mapper\trainee_mapper\GetTraineeProfileResponseMapper.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\dao\trainerDAO\TrainerDAO.java
 D:\EPAM_AI-Driven XStack\5 REST\gym_app_rest\gym_xstack_app\src\main\java\com\epam\xstack\model\dto\authentication\AuthenticationRequestDTO.java

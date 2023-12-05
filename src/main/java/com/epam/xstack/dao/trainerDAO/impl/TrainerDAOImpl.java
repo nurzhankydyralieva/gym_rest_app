@@ -4,6 +4,7 @@ import com.epam.xstack.dao.traineeDAO.TraineeDAO;
 import com.epam.xstack.dao.trainerDAO.TrainerDAO;
 import com.epam.xstack.mapper.trainer_mapper.GetTrainerProfileRequestMapper;
 import com.epam.xstack.mapper.trainer_mapper.TrainerRegistrationRequestMapper;
+import com.epam.xstack.mapper.trainer_mapper.UpdateTrainerProfileRequestMapper;
 import com.epam.xstack.model.dto.trainer.response.GetTrainerProfileResponseDTO;
 import com.epam.xstack.model.dto.trainer.response.TrainerRegistrationResponseDTO;
 import com.epam.xstack.model.dto.trainer.response.UpdateTrainerProfileResponseDTO;
@@ -28,19 +29,21 @@ public class TrainerDAOImpl implements TrainerDAO {
     private final SessionFactory sessionFactory;
     private final TrainerRegistrationRequestMapper requestMapper;
     private final GetTrainerProfileRequestMapper getTrainerProfileRequestMapper;
+    private final UpdateTrainerProfileRequestMapper updateTrainerProfileRequestMapper;
 
 
     @Override
     @Transactional
     public UpdateTrainerProfileResponseDTO updateTrainerProfile(Long id, UpdateTrainerProfileRequestDTO requestDTO) {
         Session session = sessionFactory.getCurrentSession();
+        Trainer trainer = updateTrainerProfileRequestMapper.toEntity(requestDTO);
         Trainer trainerToBeUpdated = session.get(Trainer.class, id);
 
-        trainerToBeUpdated.setUserName(requestDTO.getUserName());
-        trainerToBeUpdated.setFirstName(requestDTO.getFirstName());
-        trainerToBeUpdated.setLastName(requestDTO.getLastName());
-        trainerToBeUpdated.setIsActive(requestDTO.getIsActive());
-
+        trainerToBeUpdated.setUserName(trainer.getUserName());
+        trainerToBeUpdated.setFirstName(trainer.getFirstName());
+        trainerToBeUpdated.setLastName(trainer.getLastName());
+        trainerToBeUpdated.setIsActive(trainer.getIsActive());
+        updateTrainerProfileRequestMapper.toDto(trainer);
         return UpdateTrainerProfileResponseDTO
                 .builder()
                 .userName(trainerToBeUpdated.getUserName())

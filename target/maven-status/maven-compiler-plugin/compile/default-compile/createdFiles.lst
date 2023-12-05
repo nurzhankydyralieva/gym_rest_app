@@ -14,6 +14,7 @@ com\epam\xstack\model\dto\trainee\response\TraineeRegistrationResponseDTO.class
 com\epam\xstack\controller\AuthenticationController.class
 com\epam\xstack\service\authentication_service\impl\AuthenticationServiceImpl.class
 com\epam\xstack\configuration\SpringMVCDispatcherServletInitializer.class
+com\epam\xstack\mapper\trainee_mapper\UpdateTrainee_sTrainerListRequestMapperImpl.class
 com\epam\xstack\dao\trainerDAO\impl\TrainerDAOImpl.class
 com\epam\xstack\model\dto\trainer\reuest\UpdateTrainerProfileRequestDTO$UpdateTrainerProfileRequestDTOBuilder.class
 com\epam\xstack\mapper\trainee_mapper\UpdateTraineeProfileRequestMapperImpl.class
@@ -39,6 +40,7 @@ com\epam\xstack\mapper\trainee_mapper\UpdateTraineeProfileResponseMapper.class
 com\epam\xstack\model\dto\trainer\response\UpdateTrainerProfileResponseDTO.class
 com\epam\xstack\model\dto\authentication\AuthenticationResponseDTO$AuthenticationResponseDTOBuilder.class
 com\epam\xstack\model\dto\trainer\response\GetTrainerProfileResponseDTO.class
+com\epam\xstack\model\dto\trainee\response\UpdateTrainee_sTrainerListResponseDTO$UpdateTrainee_sTrainerListResponseDTOBuilder.class
 com\epam\xstack\mapper\trainer_mapper\GetTrainerProfileResponseMapper.class
 com\epam\xstack\mapper\trainer_mapper\TrainerRegistrationRequestMapper.class
 com\epam\xstack\mapper\trainee_mapper\GetTraineeProfileResponseMapperImpl.class
@@ -57,6 +59,7 @@ com\epam\xstack\mapper\authentication_mapper\AuthenticationRequestMapperImpl.cla
 com\epam\xstack\model\entity\Training$TrainingBuilder.class
 com\epam\xstack\mapper\trainer_mapper\UpdateTrainerProfileRequestMapperImpl.class
 com\epam\xstack\mapper\trainee_mapper\GetTraineeProfileRequestMapperImpl.class
+com\epam\xstack\model\dto\trainee\reuest\UpdateTrainee_sTrainerListRequestDTO.class
 com\epam\xstack\model\dto\trainer\reuest\TrainerRegistrationRequestDTO.class
 com\epam\xstack\model\entity\Trainer.class
 com\epam\xstack\service\trainer_service\TrainerService.class
@@ -68,6 +71,7 @@ com\epam\xstack\model\dto\authentication\AuthenticationRequestDTO.class
 com\epam\xstack\mapper\trainer_mapper\UpdateTrainerProfileRequestMapper.class
 com\epam\xstack\mapper\authentication_mapper\AuthenticationChangeLoginRequestMapperImpl.class
 com\epam\xstack\dao\traineeDAO\impl\TraineeDAOImpl.class
+com\epam\xstack\model\dto\trainee\reuest\UpdateTrainee_sTrainerListRequestDTO$UpdateTrainee_sTrainerListRequestDTOBuilder.class
 com\epam\xstack\model\entity\Training.class
 com\epam\xstack\model\entity\TrainingType.class
 com\epam\xstack\mapper\trainee_mapper\TraineeRegistrationRequestMapper.class
@@ -81,7 +85,9 @@ com\epam\xstack\model\dto\trainer\response\TrainerRegistrationResponseDTO$Traine
 com\epam\xstack\model\dto\trainer\reuest\GetTrainerProfileRequestDTO.class
 com\epam\xstack\service\trainer_service\impl\TrainerServiceImpl.class
 com\epam\xstack\mapper\trainer_mapper\GetTrainerProfileRequestMapper.class
+com\epam\xstack\mapper\trainee_mapper\UpdateTrainee_sTrainerListRequestMapper.class
 com\epam\xstack\model\dto\authentication\AuthenticationRequestDTO$AuthenticationRequestDTOBuilder.class
 com\epam\xstack\model\dto\authentication\AuthenticationResponseDTO.class
+com\epam\xstack\model\dto\trainee\response\UpdateTrainee_sTrainerListResponseDTO.class
 com\epam\xstack\dao\traineeDAO\TraineeDAO.class
 com\epam\xstack\model\dto\trainer\reuest\UpdateTrainerProfileRequestDTO.class
